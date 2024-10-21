@@ -1,0 +1,16 @@
+# Ignorar arquivos de sistema
+.DS_Store
+Thumbs.db
+
+# Arquivos de configuração do banco de dados local
+*.sql
+
+# Logs do banco de dados
+*.log
+
+# Arquivos temporários
+*.tmp
+*.bak
+
+# Credenciais de conexão com o banco de dados (se houver)
+.env
