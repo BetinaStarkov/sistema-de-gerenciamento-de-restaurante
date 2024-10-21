@@ -1,0 +1,85 @@
+# Sistema de Gerenciamento de Restaurante
+
+Este projeto é um sistema de gerenciamento de restaurante desenvolvido em SQL. Ele permite o gerenciamento de clientes, mesas, pedidos e itens de pedidos. Através deste sistema, você pode realizar operações como inserção, consulta, atualização e exclusão de dados no banco de dados.
+
+## Funcionalidades
+
+- Gerenciamento de clientes, mesas e pedidos.
+- Inserção de dados fictícios nas tabelas de clientes, mesas, pedidos e itens de pedido.
+- Consultas para listar todos os clientes, mesas, pedidos, e itens de um pedido específico.
+- Atualização de informações de clientes e mesas.
+- Exclusão de pedidos e seus itens relacionados.
+
+## Estrutura do Banco de Dados
+
+### Tabelas
+
+1. **Clientes**
+    - `id_cliente`: Inteiro, chave primária, auto-incremento.
+    - `nome`: Texto, nome do cliente.
+    - `telefone`: Texto, telefone do cliente.
+    - `email`: Texto, email do cliente.
+
+2. **Mesas**
+    - `id_mesa`: Inteiro, chave primária, auto-incremento.
+    - `numero_mesa`: Inteiro, número da mesa.
+    - `capacidade`: Inteiro, capacidade da mesa.
+
+3. **Pedidos**
+    - `id_pedido`: Inteiro, chave primária, auto-incremento.
+    - `id_cliente`: Inteiro, chave estrangeira referenciando `Clientes(id_cliente)`.
+    - `id_mesa`: Inteiro, chave estrangeira referenciando `Mesas(id_mesa)`.
+    - `data_pedido`: Data e hora do pedido.
+    - `total`: Valor total do pedido.
+
+4. **Itens_Pedido**
+    - `id_item`: Inteiro, chave primária, auto-incremento.
+    - `id_pedido`: Inteiro, chave estrangeira referenciando `Pedidos(id_pedido)`.
+    - `descricao_item`: Texto, descrição do item.
+    - `quantidade`: Inteiro, quantidade do item.
+    - `preco_unitario`: Decimal, preço unitário do item.
+
+## Instruções para Uso
+
+1. **Criar o banco de dados e tabelas**  
+   Execute o comando SQL fornecido no arquivo principal para criar o banco de dados `RestauranteDB` e suas tabelas associadas.
+
+2. **Inserir dados fictícios**  
+   Utilize os comandos `INSERT INTO` para popular as tabelas com dados de exemplo.
+
+3. **Consultas**  
+   Utilize o comando `SELECT` para listar os clientes, mesas e pedidos. Também é possível consultar os itens de um pedido específico.
+
+4. **Atualização de dados**  
+   Atualize as informações de clientes e mesas usando o comando `UPDATE`.
+
+5. **Excluir pedidos**  
+   Exclua pedidos e todos os itens associados utilizando o comando `DELETE`.
+
+## Comandos SQL Utilizados
+
+- `CREATE DATABASE` para criar o banco de dados.
+- `CREATE TABLE` para criar tabelas.
+- `INSERT INTO` para inserir registros.
+- `SELECT` para consultas.
+- `UPDATE` para atualizar registros.
+- `DELETE` para excluir registros.
+
+## Requisitos
+
+- MySQL ou qualquer outro banco de dados compatível com SQL.
+- Um ambiente SQL para executar os comandos (MySQL Workbench, phpMyAdmin, etc.).
+
+## Como Executar
+
+1. Clone o repositório:
+    ```bash
+    git clone https://github.com/seu-usuario/restaurante-db.git
+    ```
+2. Importe ou execute o arquivo SQL no seu ambiente de banco de dados.
+3. Realize as operações conforme as instruções acima.
+
+## Licença
+
+Este projeto é de uso livre para fins educacionais ou pessoais.
+
